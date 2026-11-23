@@ -1,0 +1,11 @@
+com\rideshare\rideservice\config\KafkaConfig.class
+com\rideshare\rideservice\controller\RideController.class
+com\rideshare\rideservice\repository\RideRepo.class
+com\rideshare\rideservice\RideServiceApplication.class
+com\rideshare\rideservice\service\RideService.class
+com\rideshare\rideservice\event\RideRequestedEvent.class
+com\rideshare\rideservice\dto\RideResponce.class
+com\rideshare\rideservice\exception\GlobleExceptionHandler.class
+com\rideshare\rideservice\dto\RideRequest.class
+com\rideshare\rideservice\model\RideStatus.class
+com\rideshare\rideservice\model\Ride.class

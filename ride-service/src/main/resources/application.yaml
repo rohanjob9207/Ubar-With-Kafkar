@@ -1,0 +1,39 @@
+
+server:
+  port: 8072
+
+spring:
+  application:
+    name: ride-service
+
+  # MongoDB Database
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/rideshare_db
+
+  # Kafka Configuration
+  kafka:
+    bootstrap-servers: localhost:9092
+
+    # Producer Configuration
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      acks: all
+      retries: 3
+
+    # Consumer Configuration
+    consumer:
+      group-id: ride-service-group
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.trusted.packages: "*"
+
+# Actuator Configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
